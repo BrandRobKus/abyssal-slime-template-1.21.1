@@ -2,8 +2,6 @@ package com.brandrobkus.abyssal_slime.item;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.BlockTags;
@@ -13,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    ABYSSAL_ALLOY(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 4.0F, 20, () -> Ingredient.ofItems(new ItemConvertible[]{ModItems.ABYSSAL_ALLOY}));
+    ABYSSAL_ALLOY(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 4.0F, 20, () -> Ingredient.ofItems(ModItems.ABYSSAL_ALLOY));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

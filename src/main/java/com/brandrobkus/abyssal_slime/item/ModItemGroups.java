@@ -50,6 +50,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICK_WALL);
                         entries.add(ModBlocks.CRYSTALLIZED_ABYSSAL_SLIME);
                         entries.add(ModBlocks.ABYSSAL_POWDER_BLOCK);
+                        entries.add(ModBlocks.ABYSSAL_CONCRETE);
                         entries.add(ModBlocks.ABYSS_BLOCK);
                         entries.add(ModBlocks.ABYSSAL_LECTERN);
                         entries.add(ModBlocks.OOZEWOOD_LOG);
@@ -67,7 +68,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.OOZEWOOD_PRESSURE_PLATE);
                         entries.add(ModItems.OOZEWOOD_SIGN_ITEM);
                         entries.add(ModItems.OOZEWOOD_HANGING_SIGN_ITEM);
-
                     }).build());
 
 

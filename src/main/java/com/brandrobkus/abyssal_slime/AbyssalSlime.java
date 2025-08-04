@@ -161,8 +161,6 @@ public class AbyssalSlime implements ModInitializer {
 			}
 		});
 
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.THICK, ModItems.ABYSSAL_SLIME_CHUNK, ModPotions.ABYSSAL_LEECH_POTION);
-		});
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.THICK, ModItems.ABYSSAL_SLIME_CHUNK, ModPotions.ABYSSAL_LEECH_POTION));
 	}
 }

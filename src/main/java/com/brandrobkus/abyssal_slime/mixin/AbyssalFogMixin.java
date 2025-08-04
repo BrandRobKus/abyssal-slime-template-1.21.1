@@ -1,7 +1,7 @@
 package com.brandrobkus.abyssal_slime.mixin;
 
 import com.brandrobkus.abyssal_slime.block.ModBlocks;
-import com.brandrobkus.abyssal_slime.effect.ModEffects; // Import your ModEffects
+import com.brandrobkus.abyssal_slime.effect.ModEffects;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
@@ -11,6 +11,7 @@ import net.minecraft.client.render.FogShape;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -79,7 +80,7 @@ public class AbyssalFogMixin {
         }
     }
 
-    // Helper lerp method
+    @Unique
     private static float lerp(float a, float b, float t) {
         return a + t * (b - a);
     }

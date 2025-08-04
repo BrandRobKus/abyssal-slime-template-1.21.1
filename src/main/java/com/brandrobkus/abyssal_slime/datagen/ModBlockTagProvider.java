@@ -220,5 +220,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.OOZEWOOD_WALL_HANGING_SIGN)
                 .add(ModBlocks.OOZEWOOD_HANGING_SIGN)
         ;
+
     }
 }

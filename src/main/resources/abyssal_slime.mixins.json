@@ -3,7 +3,6 @@
 	"package": "com.brandrobkus.abyssal_slime.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
 	],
 	"client": [
 		"AbyssalFogMixin",

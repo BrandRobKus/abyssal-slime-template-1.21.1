@@ -224,11 +224,13 @@ public class AbyssalLecternBlock extends BlockWithEntity {
     protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         if (state.get(HAS_BOOK)) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof AbyssalLecternBlockEntity) {
-                return ((AbyssalLecternBlockEntity)blockEntity).getComparatorOutput();
+            if (blockEntity instanceof AbyssalLecternBlockEntity abyssalLecternBlockEntity) {
+                int page = abyssalLecternBlockEntity.getCurrentPage();
+                if (page >= 0 && page <= 14) {
+                    return 15 - page;
+                }
             }
         }
-
         return 0;
     }
 

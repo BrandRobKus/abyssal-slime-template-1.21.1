@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "abyssal_slime:block/oozewood_log",
+    "side": "abyssal_slime:block/oozewood_log"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_abyssal_torch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "abyssal_slime:abyssal_torch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "abyssal_slime:abyssal_lantern"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_abyssal_torch",
+      "has_iron_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "abyssal_slime:abyssal_lantern"
+    ]
+  }
+}

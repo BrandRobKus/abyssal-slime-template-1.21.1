@@ -1,0 +1,19 @@
+{
+	"required": true,
+	"package": "com.brandrobkus.abyssal_slime.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"client": [
+		"AbyssalFogMixin",
+		"ItemRendererMixin",
+		"ModelLoaderMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

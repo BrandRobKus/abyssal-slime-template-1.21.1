@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:stone_bricks"
+    },
+    "S": {
+      "item": "abyssal_slime:abyssal_slime_chunk"
+    }
+  },
+  "pattern": [
+    "SC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:abyssal_slimed_stone_bricks"
+  }
+}

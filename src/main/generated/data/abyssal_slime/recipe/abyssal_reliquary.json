@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "R": {
+      "item": "abyssal_slime:abyssal_slime_rod"
+    },
+    "S": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "T": {
+      "item": "abyssal_slime:totem_of_renewal"
+    }
+  },
+  "pattern": [
+    "RGR",
+    "GSG",
+    "RTR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:abyssal_reliquary"
+  }
+}

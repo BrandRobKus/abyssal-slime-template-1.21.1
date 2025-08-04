@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "S": {
+      "item": "abyssal_slime:abyssal_slime_block"
+    }
+  },
+  "pattern": [
+    "SC",
+    "CS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "abyssal_slime:condensed_stone_abyssal_slime"
+  }
+}

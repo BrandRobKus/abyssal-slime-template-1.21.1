@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "abyssal_slime:abyssal_slime_chunk"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "S",
+    "T"
+  ],
+  "result": {
+    "count": 4,
+    "id": "abyssal_slime:abyssal_torch"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "concussed_effect": {
+    "subtitle": "sounds.abyssal_slime.concussed_effect",
+    "sounds": [
+      "abyssal_slime:concussed_effect"
+    ]
+  }
+}

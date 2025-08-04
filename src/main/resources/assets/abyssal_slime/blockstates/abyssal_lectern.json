@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "abyssal_slime:block/abyssal_lectern",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "abyssal_slime:block/abyssal_lectern",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "abyssal_slime:block/abyssal_lectern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "abyssal_slime:block/abyssal_lectern",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "abyssal_slime:oozewood_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "SIS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:oozewood_fence_gate"
+  }
+}

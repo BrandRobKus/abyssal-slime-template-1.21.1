@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "abyssal_slime:oozewood"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "abyssal_slime:oozewood_planks"
+  }
+}

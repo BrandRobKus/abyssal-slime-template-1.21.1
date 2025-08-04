@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "abyssal_slime:condensed_deepslate_abyssal_slime_brick_wall"
+  },
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:condensed_deepslate_abyssal_slime_bricks"
+  }
+}

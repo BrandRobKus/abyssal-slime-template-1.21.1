@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "abyssal_slime:block/oozewood_planks"
+  }
+}

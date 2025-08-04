@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "abyssal_slime:item/oozewood_hanging_sign"
+  }
+}

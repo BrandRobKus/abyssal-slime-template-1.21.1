@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "abyssal_slime:block/abyssal_lantern"
+    },
+    "hanging=true": {
+      "model": "abyssal_slime:block/abyssal_lantern_hanging"
+    }
+  }
+}

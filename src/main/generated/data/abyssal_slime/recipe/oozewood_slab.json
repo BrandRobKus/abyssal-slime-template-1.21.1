@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "abyssal_slime:oozewood_planks"
+    }
+  },
+  "pattern": [
+    "III"
+  ],
+  "result": {
+    "count": 6,
+    "id": "abyssal_slime:oozewood_slab"
+  }
+}

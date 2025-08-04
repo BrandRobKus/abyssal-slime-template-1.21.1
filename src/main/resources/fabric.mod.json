@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "abyssal_slime",
+	"version": "${version}",
+	"name": "Abyssal Slime",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/abyssal_slime/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.brandrobkus.abyssal_slime.AbyssalSlime"
+		],
+		"fabric-datagen": [
+			"com.brandrobkus.abyssal_slime.AbyssalSlimeDataGenerator"
+		],
+		"client": [
+			"com.brandrobkus.abyssal_slime.AbyssalSlimeClient"
+		]
+	},
+	"mixins": [
+      "abyssal_slime.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

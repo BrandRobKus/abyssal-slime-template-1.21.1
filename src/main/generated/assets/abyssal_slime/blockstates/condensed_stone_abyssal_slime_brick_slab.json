@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abyssal_slime:block/condensed_stone_abyssal_slime_brick_slab"
+    },
+    "type=double": {
+      "model": "abyssal_slime:block/condensed_stone_abyssal_slime_bricks"
+    },
+    "type=top": {
+      "model": "abyssal_slime:block/condensed_stone_abyssal_slime_brick_slab_top"
+    }
+  }
+}

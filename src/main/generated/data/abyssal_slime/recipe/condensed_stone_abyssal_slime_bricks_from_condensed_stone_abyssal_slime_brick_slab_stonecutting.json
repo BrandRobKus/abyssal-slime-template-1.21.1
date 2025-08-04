@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "abyssal_slime:condensed_stone_abyssal_slime_brick_slab"
+  },
+  "result": {
+    "count": 2,
+    "id": "abyssal_slime:condensed_stone_abyssal_slime_bricks"
+  }
+}

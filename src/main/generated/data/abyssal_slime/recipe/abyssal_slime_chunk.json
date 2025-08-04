@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "abyssal_slime:abyssal_slime_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "abyssal_slime:abyssal_slime_chunk"
+  }
+}

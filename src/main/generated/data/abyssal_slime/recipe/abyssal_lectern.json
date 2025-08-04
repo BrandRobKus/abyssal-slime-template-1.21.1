@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stone_slab"
+    },
+    "C": {
+      "item": "abyssal_slime:condensed_stone_abyssal_slime"
+    },
+    "E": {
+      "item": "minecraft:enchanting_table"
+    },
+    "S": {
+      "item": "abyssal_slime:abyssal_slime_block"
+    }
+  },
+  "pattern": [
+    "BBB",
+    " E ",
+    "CSC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:abyssal_lectern"
+  }
+}

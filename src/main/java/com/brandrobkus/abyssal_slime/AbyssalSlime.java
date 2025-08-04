@@ -12,7 +12,6 @@ import com.brandrobkus.abyssal_slime.item.ModItemGroups;
 import com.brandrobkus.abyssal_slime.item.ModItems;
 import com.brandrobkus.abyssal_slime.potion.ModPotions;
 import com.brandrobkus.abyssal_slime.sound.ModSounds;
-import com.brandrobkus.abyssal_slime.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -45,8 +44,6 @@ public class AbyssalSlime implements ModInitializer {
 	public static final String MOD_ID = "abyssal_slime";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	private static final Map<UUID, Integer> oozeTicks = new HashMap<>();
-	//public static final Identifier ABYSSAL_CAVE_ID = Identifier.of(MOD_ID, "abyssal_cave");
-	//public static final AbyssalCaveFeature ABYSSAL_CAVE_FEATURE = new AbyssalCaveFeature(DefaultFeatureConfig.CODEC);
 
 	@Override
 	public void onInitialize() {
@@ -57,7 +54,6 @@ public class AbyssalSlime implements ModInitializer {
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
 		ModItemGroups.registerItemGroups();
-		ModWorldGeneration.generateModWorldGen();
 		ModEntities.registerModEntities();
 		ModPotions.registerPotions();
 		ModWoodType.registerWoodType();
@@ -87,16 +83,6 @@ public class AbyssalSlime implements ModInitializer {
 				SpawnGroup.MONSTER,
 				ModEntities.ABYSSAL_SLIME,
 				400, 1, 2);
-
-		//Registry.register(Registries.FEATURE, ABYSSAL_CAVE_ID, ABYSSAL_CAVE_FEATURE);
-		//ModWorldBootstrap.init(); // Registers configured and placed features
-
-		// Add the feature to biome generation
-		//BiomeModifications.addFeature(
-				//BiomeSelectors.foundInOverworld(),
-				//GenerationStep.Feature.UNDERGROUND_DECORATION,
-				//ModPlacedFeatures.ABYSSAL_CAVE_PLACED
-		//);
 
 		StrippableBlockRegistry.register(ModBlocks.OOZEWOOD_LOG, ModBlocks.STRIPPED_OOZEWOOD_LOG);
 		StrippableBlockRegistry.register(ModBlocks.OOZEWOOD, ModBlocks.STRIPPED_OOZEWOOD);

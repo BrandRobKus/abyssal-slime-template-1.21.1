@@ -13,8 +13,6 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -132,6 +130,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ModItems.ABYSSAL_POWDER, 4)
                 .input(Items.NETHERITE_SCRAP, 4)
                 .criterion(hasItem(ModItems.ABYSSAL_POWDER), conditionsFromItem(ModItems.ABYSSAL_POWDER))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.OOZEWOOD_LOG)
+                .input(ModItems.ABYSSAL_SLIME_CHUNK, 1)
+                .input(Blocks.OAK_LOG, 1)
+                .criterion(hasItem(ModItems.ABYSSAL_SLIME_CHUNK), conditionsFromItem(Blocks.OAK_LOG))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.STRIPPED_OOZEWOOD_LOG)
+                .input(ModItems.ABYSSAL_SLIME_CHUNK, 1)
+                .input(Blocks.STRIPPED_OAK_LOG, 1)
+                .criterion(hasItem(ModItems.ABYSSAL_SLIME_CHUNK), conditionsFromItem(Blocks.STRIPPED_OAK_LOG))
                 .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ABYSSAL_OOZE_BUCKET)

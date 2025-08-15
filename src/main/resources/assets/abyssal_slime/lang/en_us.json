@@ -21,29 +21,38 @@
   "block.abyssal_slime.abyssal_powder_block": "Abyssal Powder Block",
   "block.abyssal_slime.abyss_block": "Abyss Block",
   "block.abyssal_slime.abyssal_lectern": "Abyssal Lectern",
+
   "block.abyssal_slime.abyssal_torch": "Abyssal Torch",
   "block.abyssal_slime.abyssal_wall_torch": "Abyssal Wall Torch",
+
   "block.abyssal_slime.abyssal_ooze_fluid_block": "Abyssal Ooze",
+
   "block.abyssal_slime.oozewood_planks": "Oozewood Planks",
   "block.abyssal_slime.oozewood_stairs": "Oozewood Stairs",
   "block.abyssal_slime.oozewood_slab": "Oozewood Slab",
+
   "block.abyssal_slime.oozewood_log": "Oozewood Log",
   "block.abyssal_slime.stripped_oozewood_log": "Stripped Oozewood Log",
   "block.abyssal_slime.oozewood": "Oozewood",
   "block.abyssal_slime.stripped_oozewood": "Stripped Oozewood",
+
   "block.abyssal_slime.oozewood_sign": "Oozewood Sign",
   "block.abyssal_slime.oozewood_wall_sign": "Oozewood Wall Sign",
   "block.abyssal_slime.oozewood_hanging_sign": "Oozewood Hanging Sign",
   "block.abyssal_slime.oozewood_wall_hanging_sign": "Oozewood Wall Hanging Sign",
+
   "block.abyssal_slime.oozewood_pressure_plate": "Oozewood Pressure Plate",
   "block.abyssal_slime.oozewood_trapdoor": "Oozewood Trapdoor",
   "block.abyssal_slime.oozewood_button": "Oozewood Button",
   "block.abyssal_slime.oozewood_fence_gate": "Oozewood Fence Gate",
   "block.abyssal_slime.oozewood_fence": "Oozewood Fence",
   "block.abyssal_slime.oozewood_door": "Oozewood Door",
-  "block.abyssal_slime.abyssal_lantern": "Abyssal Lantern",
-  "block.abyssal_slime.abyssal_concrete": "Abyssal Concrete",
+  "block.abyssal_slime.oozewood_sapling": "Oozewood Sapling",
+  "block.abyssal_slime.leaves": "Oozewood Leaves",
 
+  "block.abyssal_slime.abyssal_lantern": "Abyssal Lantern",
+
+  "block.abyssal_slime.abyssal_concrete": "Abyssal Concrete",
 
   "item.abyssal_slime.abyssal_slime_chunk": "Abyssal Slime Chunk",
   "item.abyssal_slime.abyssal_powder": "Abyssal Powder",
@@ -57,6 +66,9 @@
   "item.abyssal_slime.abyssal_creeper_spawn_egg": "Abyssal Creeper Spawn Egg",
   "item.abyssal_slime.abyssal_slime_spawn_egg": "Abyssal Slime Spawn Egg",
   "item.abyssal_slime.abyssal_blaze_spawn_egg": "Abyssal Blaze Spawn Egg",
+  "item.abyssal_slime.oozewood_boat": "Oozewood Boat",
+  "item.abyssal_slime.oozewood_chest_boat": "Oozewood Chest Boat",
+
 
   "item.abyssal_slime.totem_of_renewal": "Totem Of Renewal",
   "item.abyssal_slime.abyssal_reliquary": "Abyssal Reliquary",

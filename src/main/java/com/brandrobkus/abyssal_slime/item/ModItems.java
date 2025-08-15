@@ -3,7 +3,9 @@ package com.brandrobkus.abyssal_slime.item;
 import com.brandrobkus.abyssal_slime.AbyssalSlime;
 import com.brandrobkus.abyssal_slime.block.ModBlocks;
 import com.brandrobkus.abyssal_slime.entity.ModEntities;
+import com.brandrobkus.abyssal_slime.entity.boat.ModBoats;
 import com.brandrobkus.abyssal_slime.fluid.ModFluids;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -24,8 +26,20 @@ public class ModItems {
             new HangingSignItem(
                     ModBlocks.OOZEWOOD_HANGING_SIGN,
                     ModBlocks.OOZEWOOD_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
+
     public static final Item OOZEWOOD_SIGN_ITEM = registerItem("oozewood_sign",
-            new SignItem(new Item.Settings().maxCount(16), ModBlocks.OOZEWOOD_SIGN, ModBlocks.OOZEWOOD_WALL_SIGN));
+            new SignItem(new Item.Settings().maxCount(16),
+                    ModBlocks.OOZEWOOD_SIGN,
+                    ModBlocks.OOZEWOOD_WALL_SIGN));
+
+    public static final Item OOZEWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.OOZEWOOD_BOAT_ID,
+            ModBoats.OOZEWOOD_BOAT_KEY,
+            false);
+
+    public static final Item OOZEWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.OOZEWOOD_CHEST_BOAT_ID,
+            ModBoats.OOZEWOOD_BOAT_KEY,
+            true);
+
     public static final Item ABYSSAL_OOZE_BUCKET = registerItem("abyssal_ooze_bucket",
             new BucketItem(ModFluids.ABYSSAL_OOZE_STILL, new Item.Settings().maxCount(1)));
     public static final Item ABYSSAL_ALLOY = registerItem("abyssal_alloy", new Item((new Item.Settings())));

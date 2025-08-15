@@ -37,6 +37,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ABYSS_BLOCK);
         addDrop(ModBlocks.ABYSSAL_LECTERN);
         addDrop(ModBlocks.ABYSSAL_OOZE_FLUID_BLOCK);
+
+
         addDrop(ModBlocks.OOZEWOOD_PLANKS);
         addDrop(ModBlocks.OOZEWOOD_STAIRS);
         addDrop(ModBlocks.OOZEWOOD_SLAB);
@@ -49,9 +51,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OOZEWOOD_BUTTON);
         addDrop(ModBlocks.OOZEWOOD_FENCE_GATE);
         addDrop(ModBlocks.OOZEWOOD_FENCE);
-        addDrop(ModBlocks.OOZEWOOD_DOOR);
+        doorDrops(ModBlocks.OOZEWOOD_DOOR);
         addDrop(ModBlocks.OOZEWOOD_SIGN, ModBlocks.OOZEWOOD_WALL_SIGN);
         addDrop(ModBlocks.OOZEWOOD_HANGING_SIGN, ModBlocks.OOZEWOOD_WALL_HANGING_SIGN);
+        leavesDrops(ModBlocks.OOZEWOOD_LEAVES, ModBlocks.OOZEWOOD_SAPLING, SAPLING_DROP_CHANCE);
+
         addDrop(ModBlocks.ABYSSAL_TORCH, ModBlocks.ABYSSAL_WALL_TORCH);
         addDrop(ModBlocks.ABYSSAL_CONCRETE);
     }

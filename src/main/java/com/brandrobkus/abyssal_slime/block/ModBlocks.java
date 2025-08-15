@@ -2,17 +2,29 @@ package com.brandrobkus.abyssal_slime.block;
 
 
 import com.brandrobkus.abyssal_slime.AbyssalSlime;
+import com.brandrobkus.abyssal_slime.block.blockset.ModBlockSetTypeList;
+import com.brandrobkus.abyssal_slime.block.blockset.ModWoodTypeList;
 import com.brandrobkus.abyssal_slime.fluid.ModFluids;
+import com.brandrobkus.abyssal_slime.worldgen.ModConfiguredFeatures;
+import com.brandrobkus.abyssal_slime.worldgen.tree.ModSaplingGenerator;
+import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 import static net.minecraft.block.Blocks.createLogBlock;
 import static net.minecraft.block.Blocks.createWoodenButtonBlock;
@@ -135,42 +147,104 @@ public class ModBlocks {
     public static final Block STRIPPED_OOZEWOOD_LOG = registerBlock("stripped_oozewood_log",
             createLogBlock(MapColor.PALE_PURPLE, MapColor.PURPLE));
     public static final Block OOZEWOOD = registerBlock("oozewood",
-            new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PURPLE)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()));
     public static final Block STRIPPED_OOZEWOOD = registerBlock("stripped_oozewood",
-            new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PALE_PURPLE)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()));
 
-    public static final Block OOZEWOOD_SIGN = registerBlock("oozewood_sign",
-            new OozewoodSignBlock(WoodType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
-                    .solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable()));
-    public static final Block OOZEWOOD_WALL_SIGN = registerBlock("oozewood_wall_sign",
-            new OozewoodWallSignBlock(WoodType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
-                    .solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).dropsLike(ModBlocks.OOZEWOOD_SIGN).burnable()));
-    public static final Block OOZEWOOD_HANGING_SIGN = registerBlock("oozewood_hanging_sign",
-            new OozewoodhangingSignBlock(WoodType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
-                    .solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable()));
-    public static final Block OOZEWOOD_WALL_HANGING_SIGN = registerBlock("oozewood_wall_hanging_sign",
-            new OozewoodWallHangingSignBlock(WoodType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
-                    .solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).dropsLike(ModBlocks.OOZEWOOD_HANGING_SIGN).burnable()));
+    public static final LeavesBlock OOZEWOOD_LEAVES = registerBlock("oozewood_leaves",
+            new LeavesBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PINK)
+                    .strength(0.2F)
+                    .ticksRandomly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .nonOpaque()
+                    .allowsSpawning(Blocks::canSpawnOnLeaves)
+                    .suffocates(Blocks::never)
+                    .blockVision(Blocks::never)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .solidBlock(Blocks::never)));
+
+    public static final Block OOZEWOOD_SAPLING = registerBlock("oozewood_sapling",
+            new ModSaplingBlock(ModSaplingGenerator.OOZEWOOD, AbstractBlock.Settings.create().mapColor(MapColor.DARK_DULL_PINK)
+                    .noCollision().ticksRandomly().breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY), Blocks.DEEPSLATE));
+
+    private static final Identifier OOZEWOOD_SIGN_TEXTURE = AbyssalSlime.id("entity/signs/oozewood");
+    private static final Identifier OOZEWOOD_HANGING_SIGN_TEXTURE = AbyssalSlime.id("entity/signs/hanging/oozewood");
+    private static final Identifier OOZEWOOD_HANGING_SIGN_GUI_TEXTURE = AbyssalSlime.id("textures/gui/hanging_signs/oozewood");
+
+
+    public static final TerraformSignBlock OOZEWOOD_SIGN = registerBlock("oozewood_sign",
+            new TerraformSignBlock(OOZEWOOD_SIGN_TEXTURE,
+                    AbstractBlock.Settings.create()
+                            .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable()));
+
+    public static final TerraformWallSignBlock OOZEWOOD_WALL_SIGN = registerBlock("oozewood_wall_sign",
+            new TerraformWallSignBlock(OOZEWOOD_SIGN_TEXTURE,
+                    AbstractBlock.Settings.create()
+                            .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable()));
+
+    public static final TerraformHangingSignBlock OOZEWOOD_HANGING_SIGN = registerBlock("oozewood_hanging_sign",
+            new TerraformHangingSignBlock(OOZEWOOD_HANGING_SIGN_TEXTURE, OOZEWOOD_HANGING_SIGN_GUI_TEXTURE,
+                    AbstractBlock.Settings.create()
+                            .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable()));
+
+    public static final TerraformWallHangingSignBlock OOZEWOOD_WALL_HANGING_SIGN = registerBlock("oozewood_hanging_sign",
+            new TerraformWallHangingSignBlock(OOZEWOOD_HANGING_SIGN_TEXTURE, OOZEWOOD_HANGING_SIGN_GUI_TEXTURE,
+                    AbstractBlock.Settings.create()
+                            .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
+                            .solid()
+                            .instrument(NoteBlockInstrument.BASS)
+                            .noCollision()
+                            .strength(1.0F)
+                            .burnable()));
+
     public static final Block OOZEWOOD_PRESSURE_PLATE = registerBlock("oozewood_pressure_plate",
-            new PressurePlateBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
+            new PressurePlateBlock(ModBlockSetTypeList.OOZEWOOD, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
                     .solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(0.5F).burnable().pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block OOZEWOOD_TRAPDOOR = registerBlock("oozewood_trapdoor",
-            new TrapdoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
+            new TrapdoorBlock(ModBlockSetTypeList.OOZEWOOD, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
                     .instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never).burnable()));
     public static final Block OOZEWOOD_BUTTON = registerBlock("oozewood_button",
-            createWoodenButtonBlock(BlockSetType.SPRUCE));
+            createWoodenButtonBlock(ModBlockSetTypeList.OOZEWOOD));
     public static final Block OOZEWOOD_FENCE_GATE = registerBlock("oozewood_fence_gate",
-            new FenceGateBlock(WoodType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
+            new FenceGateBlock(ModWoodTypeList.OOZEWOOD, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
                     .solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable()));
     public static final Block OOZEWOOD_FENCE = registerBlock("oozewood_fence",
             new FenceBlock(AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
                     .solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable()));
     public static final Block OOZEWOOD_DOOR = registerBlock("oozewood_door",
-            new DoorBlock(BlockSetType.SPRUCE, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
+            new DoorBlock(ModBlockSetTypeList.OOZEWOOD, AbstractBlock.Settings.create().mapColor(ModBlocks.OOZEWOOD_PLANKS.getDefaultMapColor())
                     .instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
 
-    private static Block registerBlock(String name, Block block){
+    private static <T extends Block> T registerBlock(String name, T block){
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(AbyssalSlime.MOD_ID, name),block);
     }
@@ -182,5 +256,6 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         AbyssalSlime.LOGGER.info("Registering Mod Blocks for " + AbyssalSlime.MOD_ID);
+
     }
 }

@@ -18,11 +18,16 @@ fabricApi {
 }
 loom {
 	runs {
-		client2 {
-			client()
-			name "Minecraft Client 2"
-			vmArg "-Dfabric.development.username=BrandNo2"
+		datagen {
+			inherit client
 		}
+	}
+}
+
+repositories {
+	maven {
+		name = "TerraformersMC"
+		url = 'https://maven.terraformersmc.com/'
 	}
 }
 
@@ -31,11 +36,10 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-}
 
-repositories {
+	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
+	include modApi("teamreborn:energy:${project.energy_version}")
 }
-
 
 processResources {
 	inputs.property "version", project.version

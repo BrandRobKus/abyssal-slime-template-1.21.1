@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
@@ -31,15 +32,15 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ABYSSAL_SLIME_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ABYSSAL_SLIMED_STONE_BRICKS);
+        /*
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_BRICKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICKS);
+         */
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRYSTALLIZED_ABYSSAL_SLIME);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ABYSS_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OOZEWOOD_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ABYSSAL_CONCRETE);
-        blockStateModelGenerator.registerDoor(ModBlocks.OOZEWOOD_DOOR);
         blockStateModelGenerator.registerLantern(ModBlocks.ABYSSAL_LANTERN);
 
         TextureMap textureMap = TextureMap.torch(ModBlocks.ABYSSAL_TORCH);
@@ -54,6 +55,7 @@ public class ModModelProvider extends FabricModelProvider {
         TextureMap condensedDeepslateBricksSlimeTexture = TextureMap.all(Identifier.of(AbyssalSlime.MOD_ID, "block/condensed_deepslate_abyssal_slime_bricks"));
         TextureMap oozewoodPlanksTexture = TextureMap.all(Identifier.of(AbyssalSlime.MOD_ID, "block/oozewood_planks"));
 
+        /*
         //stairs
         {
             final Identifier stairsModelId = Models.STAIRS.upload(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_STAIRS, condensedStoneSlimeTexture, blockStateModelGenerator.modelCollector);
@@ -229,6 +231,81 @@ public class ModModelProvider extends FabricModelProvider {
                     condensedDeepslateBricksSlimeTexture, blockStateModelGenerator.modelCollector);
             blockStateModelGenerator.registerParentedItemModel(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICK_WALL, deepslateBrickWallInventory);
         }
+
+         */
+
+        blockStateModelGenerator.registerLog(ModBlocks.OOZEWOOD_LOG)
+                .log(ModBlocks.OOZEWOOD_LOG)
+                .wood(ModBlocks.OOZEWOOD);
+
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_OOZEWOOD_LOG)
+                .log(ModBlocks.STRIPPED_OOZEWOOD_LOG)
+                .wood(ModBlocks.STRIPPED_OOZEWOOD);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.OOZEWOOD_LEAVES);
+
+        blockStateModelGenerator.registerTintableCross(ModBlocks.OOZEWOOD_SAPLING,
+                BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_OOZEWOOD_LOG,
+                ModBlocks.OOZEWOOD_HANGING_SIGN,
+                ModBlocks.OOZEWOOD_WALL_HANGING_SIGN);
+
+        var oozewoodFamily = new BlockFamily.Builder(ModBlocks.OOZEWOOD_PLANKS)
+                .button(ModBlocks.OOZEWOOD_BUTTON)
+                .fence(ModBlocks.OOZEWOOD_FENCE)
+                .fenceGate(ModBlocks.OOZEWOOD_FENCE_GATE)
+                .pressurePlate(ModBlocks.OOZEWOOD_PRESSURE_PLATE)
+                .sign(ModBlocks.OOZEWOOD_SIGN, ModBlocks.OOZEWOOD_WALL_SIGN)
+                .slab(ModBlocks.OOZEWOOD_SLAB)
+                .stairs(ModBlocks.OOZEWOOD_STAIRS)
+                .door(ModBlocks.OOZEWOOD_DOOR)
+                .trapdoor(ModBlocks.OOZEWOOD_TRAPDOOR)
+                .group("wooden")
+                .unlockCriterionName("has_planks")
+                .build();
+        blockStateModelGenerator.registerCubeAllModelTexturePool(oozewoodFamily.getBaseBlock())
+                .family(oozewoodFamily);
+
+        var condensedStoneFamily = new BlockFamily.Builder(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME)
+                .wall(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_WALL)
+                .slab(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_SLAB)
+                .stairs(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_STAIRS)
+                .group("stone")
+                .unlockCriterionName("has_stone")
+                .build();
+        blockStateModelGenerator.registerCubeAllModelTexturePool(condensedStoneFamily.getBaseBlock())
+                .family(condensedStoneFamily);
+
+        var condensedDeepslateFamily = new BlockFamily.Builder(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME)
+                .wall(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_WALL)
+                .slab(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_SLAB)
+                .stairs(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_STAIRS)
+                .group("stone")
+                .unlockCriterionName("has_stone")
+                .build();
+        blockStateModelGenerator.registerCubeAllModelTexturePool(condensedDeepslateFamily.getBaseBlock())
+                .family(condensedDeepslateFamily);
+
+        var condensedStoneBrickFamily = new BlockFamily.Builder(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_BRICKS)
+                .wall(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_BRICK_WALL)
+                .slab(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_BRICK_SLAB)
+                .stairs(ModBlocks.CONDENSED_STONE_ABYSSAL_SLIME_BRICK_STAIRS)
+                .group("bricks")
+                .unlockCriterionName("has_bricks")
+                .build();
+        blockStateModelGenerator.registerCubeAllModelTexturePool(condensedStoneBrickFamily.getBaseBlock())
+                .family(condensedStoneBrickFamily);
+
+        var condensedDeepslateBrickFamily = new BlockFamily.Builder(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICKS)
+                .wall(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICK_WALL)
+                .slab(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICK_SLAB)
+                .stairs(ModBlocks.CONDENSED_DEEPSLATE_ABYSSAL_SLIME_BRICK_STAIRS)
+                .group("bricks")
+                .unlockCriterionName("has_bricks")
+                .build();
+        blockStateModelGenerator.registerCubeAllModelTexturePool(condensedDeepslateBrickFamily.getBaseBlock())
+                .family(condensedDeepslateBrickFamily);
     }
 
     @Override
@@ -246,5 +323,7 @@ public class ModModelProvider extends FabricModelProvider {
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.ABYSSAL_BLAZE_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.OOZEWOOD_BOAT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OOZEWOOD_CHEST_BOAT, Models.GENERATED);
     }
 }

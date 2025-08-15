@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "abyssal_slime:block/condensed_stone_abyssal_slime",
-    "side": "abyssal_slime:block/condensed_stone_abyssal_slime",
-    "top": "abyssal_slime:block/condensed_stone_abyssal_slime"
-  }
-}

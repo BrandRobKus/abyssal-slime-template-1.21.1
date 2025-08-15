@@ -11,6 +11,9 @@ public class ModTags {
 
     public static class Items {
 
+        public static final TagKey<Item> OOZEWOOD_LOGS =
+                createTag("oozewood_logs");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(AbyssalSlime.MOD_ID, name));
         }

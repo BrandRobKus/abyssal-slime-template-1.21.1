@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "abyssal_slime:block/condensed_deepslate_abyssal_slime"
-  }
-}

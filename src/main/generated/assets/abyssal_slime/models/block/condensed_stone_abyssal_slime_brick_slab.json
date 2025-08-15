@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "abyssal_slime:block/condensed_stone_abyssal_slime_bricks",
-    "side": "abyssal_slime:block/condensed_stone_abyssal_slime_bricks",
-    "top": "abyssal_slime:block/condensed_stone_abyssal_slime_bricks"
-  }
-}

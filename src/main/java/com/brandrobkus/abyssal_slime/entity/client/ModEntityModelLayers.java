@@ -7,6 +7,7 @@ import com.google.common.collect.Sets;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.minecraft.block.WoodType;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
@@ -37,6 +38,10 @@ public class ModEntityModelLayers {
 
     private static EntityModelLayer create(String id, String layer) {
         return new EntityModelLayer(Identifier.ofVanilla(id), layer);
+    }
+
+    public static EntityModelLayer createHangingSign(WoodType type) {
+        return create("hanging_sign/" + type.name(), "main");
     }
 
     public static Stream<EntityModelLayer> getLayers() {

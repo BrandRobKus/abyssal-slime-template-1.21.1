@@ -1,10 +1,10 @@
 package com.brandrobkus.abyssal_slime;
 
 import com.brandrobkus.abyssal_slime.block.ModBlocks;
-import com.brandrobkus.abyssal_slime.block.ModWoodType;
 import com.brandrobkus.abyssal_slime.block.entity.ModBlockEntities;
 import com.brandrobkus.abyssal_slime.effect.ModEffects;
 import com.brandrobkus.abyssal_slime.entity.ModEntities;
+import com.brandrobkus.abyssal_slime.entity.boat.ModBoats;
 import com.brandrobkus.abyssal_slime.entity.custom.AbyssalCreeperEntity;
 import com.brandrobkus.abyssal_slime.entity.custom.AbyssalSlimeEntity;
 import com.brandrobkus.abyssal_slime.fluid.ModFluids;
@@ -12,6 +12,9 @@ import com.brandrobkus.abyssal_slime.item.ModItemGroups;
 import com.brandrobkus.abyssal_slime.item.ModItems;
 import com.brandrobkus.abyssal_slime.potion.ModPotions;
 import com.brandrobkus.abyssal_slime.sound.ModSounds;
+import com.brandrobkus.abyssal_slime.worldgen.ModBiomeModification;
+
+import com.brandrobkus.abyssal_slime.worldgen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -32,6 +35,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,7 +60,9 @@ public class AbyssalSlime implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModEntities.registerModEntities();
 		ModPotions.registerPotions();
-		ModWoodType.registerWoodType();
+		ModBoats.registerModBoats();
+		ModBiomeModification.load();
+		ModWorldGeneration.generateModWorldGen();
 
 		FuelRegistry.INSTANCE.add(ModItems.ABYSSAL_SLIME_CHUNK, 80);
 
@@ -162,5 +168,9 @@ public class AbyssalSlime implements ModInitializer {
 		});
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.THICK, ModItems.ABYSSAL_SLIME_CHUNK, ModPotions.ABYSSAL_LEECH_POTION));
+	}
+
+	public static Identifier id(String path) {
+		return Identifier.of(MOD_ID, path);
 	}
 }

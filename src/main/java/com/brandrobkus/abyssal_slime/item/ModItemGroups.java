@@ -29,6 +29,8 @@ public class ModItemGroups {
                         entries.add(ModItems.ABYSSAL_CREEPER_SPAWN_EGG);
                         entries.add(ModItems.ABYSSAL_SLIME_SPAWN_EGG);
                         entries.add(ModItems.ABYSSAL_BLAZE_SPAWN_EGG);
+                        entries.add(ModItems.OOZEWOOD_BOAT);
+                        entries.add(ModItems.OOZEWOOD_CHEST_BOAT);
 
                         entries.add(ModBlocks.ABYSSAL_SLIME_BLOCK);
                         entries.add(ModBlocks.ABYSSAL_SLIMED_STONE_BRICKS);
@@ -57,6 +59,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STRIPPED_OOZEWOOD_LOG);
                         entries.add(ModBlocks.OOZEWOOD);
                         entries.add(ModBlocks.STRIPPED_OOZEWOOD);
+                        entries.add(ModBlocks.OOZEWOOD_SAPLING);
+                        entries.add(ModBlocks.OOZEWOOD_LEAVES);
                         entries.add(ModBlocks.OOZEWOOD_PLANKS);
                         entries.add(ModBlocks.OOZEWOOD_SLAB);
                         entries.add(ModBlocks.OOZEWOOD_STAIRS);

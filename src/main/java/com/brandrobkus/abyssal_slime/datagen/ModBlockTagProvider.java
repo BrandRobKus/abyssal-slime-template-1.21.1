@@ -137,6 +137,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.STRIPPED_OOZEWOOD_LOG)
         ;
 
+        getOrCreateTagBuilder(BlockTags.LEAVES)
+                .add(ModBlocks.OOZEWOOD_LEAVES)
+        ;
+
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.OOZEWOOD_SAPLING)
+        ;
+
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.OOZEWOOD_PLANKS)
         ;

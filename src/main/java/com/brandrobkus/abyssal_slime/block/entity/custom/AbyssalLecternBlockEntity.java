@@ -32,10 +32,6 @@ import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
 
 public class AbyssalLecternBlockEntity extends BlockEntity implements Clearable, NamedScreenHandlerFactory {
-    public static final int field_31348 = 0;
-    public static final int field_31349 = 1;
-    public static final int field_31350 = 0;
-    public static final int field_31351 = 1;
     private final Inventory inventory = new Inventory() {
         public int size() {
             return 1;

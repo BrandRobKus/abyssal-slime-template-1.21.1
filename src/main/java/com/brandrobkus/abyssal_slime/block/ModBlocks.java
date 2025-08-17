@@ -256,6 +256,5 @@ public class ModBlocks {
 
     public static void registerModBlocks() {
         AbyssalSlime.LOGGER.info("Registering Mod Blocks for " + AbyssalSlime.MOD_ID);
-
     }
 }

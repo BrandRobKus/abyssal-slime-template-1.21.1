@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "item": "abyssal_slime:oozewood_planks"
+    }
+  },
+  "pattern": [
+    "T T",
+    "TTT"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:oozewood_boat"
+  }
+}

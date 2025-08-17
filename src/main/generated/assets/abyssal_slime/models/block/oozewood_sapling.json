@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "abyssal_slime:block/oozewood_sapling"
+  }
+}

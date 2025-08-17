@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:oak_log"
+    },
+    "T": {
+      "item": "abyssal_slime:abyssal_slime_chunk"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PTP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "abyssal_slime:oozewood_log"
+  }
+}

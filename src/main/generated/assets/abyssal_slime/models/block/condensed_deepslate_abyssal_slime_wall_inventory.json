@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "abyssal_slime:block/condensed_deepslate_abyssal_slime"
+  }
+}

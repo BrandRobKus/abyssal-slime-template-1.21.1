@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "abyssal_slime:abyssal_powder"
+    },
+    "T": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "pattern": [
+    " P ",
+    "PTP",
+    " P "
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:totem_of_renewal"
+  }
+}

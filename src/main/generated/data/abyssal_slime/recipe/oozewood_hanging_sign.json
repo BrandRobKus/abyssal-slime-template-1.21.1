@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:chains"
+    },
+    "T": {
+      "item": "abyssal_slime:oozewood_planks"
+    }
+  },
+  "pattern": [
+    "C C",
+    "TTT",
+    "TTT"
+  ],
+  "result": {
+    "count": 6,
+    "id": "abyssal_slime:oozewood_hanging_sign"
+  }
+}

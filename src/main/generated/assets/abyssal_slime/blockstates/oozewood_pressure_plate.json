@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "abyssal_slime:block/oozewood_pressure_plate"
+    },
+    "powered=true": {
+      "model": "abyssal_slime:block/oozewood_pressure_plate_down"
+    }
+  }
+}

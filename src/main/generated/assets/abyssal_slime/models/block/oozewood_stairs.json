@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "abyssal_slime:block/oozewood_planks",
+    "side": "abyssal_slime:block/oozewood_planks",
+    "top": "abyssal_slime:block/oozewood_planks"
+  }
+}

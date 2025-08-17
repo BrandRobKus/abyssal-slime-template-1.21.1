@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "abyssal_slime:block/oozewood_planks"
+  }
+}

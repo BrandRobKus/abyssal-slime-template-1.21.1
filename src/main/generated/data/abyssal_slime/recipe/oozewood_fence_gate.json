@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": {
+      "tag": "c:rods/wooden"
+    },
+    "T": {
+      "item": "abyssal_slime:oozewood_planks"
+    }
+  },
+  "pattern": [
+    "STT",
+    "STT"
+  ],
+  "result": {
+    "count": 1,
+    "id": "abyssal_slime:oozewood_fence_gate"
+  }
+}

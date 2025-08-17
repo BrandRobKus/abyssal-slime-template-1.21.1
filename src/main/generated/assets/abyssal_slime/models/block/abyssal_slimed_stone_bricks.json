@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "abyssal_slime:block/abyssal_slimed_stone_bricks"
+  }
+}

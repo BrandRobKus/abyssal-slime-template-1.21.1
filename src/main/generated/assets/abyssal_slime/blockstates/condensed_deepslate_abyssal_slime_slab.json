@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "abyssal_slime:block/condensed_deepslate_abyssal_slime_slab"
+    },
+    "type=double": {
+      "model": "abyssal_slime:block/condensed_deepslate_abyssal_slime"
+    },
+    "type=top": {
+      "model": "abyssal_slime:block/condensed_deepslate_abyssal_slime_slab_top"
+    }
+  }
+}

@@ -17,6 +17,7 @@ public class ModItems {
     public static final Item ABYSSAL_SLIME_CHUNK = registerItem("abyssal_slime_chunk", new Item(new Item.Settings()));
     public static final Item ABYSSAL_POWDER = registerItem("abyssal_powder", new Item(new Item.Settings()));
     public static final Item ABYSSAL_SLIME_ROD = registerItem("abyssal_slime_rod", new Item(new Item.Settings()));
+
     public static final Item ABYSSAL_TORCH_ITEM = registerItem("abyssal_torch",
             new VerticallyAttachableBlockItem(
             ModBlocks.ABYSSAL_TORCH,

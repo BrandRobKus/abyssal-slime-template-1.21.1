@@ -5,26 +5,21 @@ import com.brandrobkus.abyssal_slime.AbyssalSlime;
 import com.brandrobkus.abyssal_slime.block.blockset.ModBlockSetTypeList;
 import com.brandrobkus.abyssal_slime.block.blockset.ModWoodTypeList;
 import com.brandrobkus.abyssal_slime.fluid.ModFluids;
-import com.brandrobkus.abyssal_slime.worldgen.ModConfiguredFeatures;
 import com.brandrobkus.abyssal_slime.worldgen.tree.ModSaplingGenerator;
 import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-
-import java.util.Optional;
 
 import static net.minecraft.block.Blocks.createLogBlock;
 import static net.minecraft.block.Blocks.createWoodenButtonBlock;
@@ -120,11 +115,11 @@ public class ModBlocks {
             new AbyssalLecternBlock(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).strength(1.5f, 5.0f)
                     .requiresTool().sounds(BlockSoundGroup.STONE).nonOpaque()));
 
-    public static final Block ABYSSAL_TORCH = registerBlock("abyssal_torch",
+    public static final Block ABYSSAL_TORCH = registerBlockNoItem("abyssal_torch",
             new TorchBlock(ParticleTypes.WARPED_SPORE,
                     AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 13)
                             .sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).nonOpaque()));
-    public static final Block ABYSSAL_WALL_TORCH = registerBlock("abyssal_wall_torch",
+    public static final Block ABYSSAL_WALL_TORCH = registerBlockNoItem("abyssal_wall_torch",
             new WallTorchBlock(ParticleTypes.WARPED_SPORE,
                     AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 13)
                             .sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY).nonOpaque().dropsLike(ModBlocks.ABYSSAL_TORCH)));
@@ -185,7 +180,7 @@ public class ModBlocks {
     private static final Identifier OOZEWOOD_HANGING_SIGN_GUI_TEXTURE = AbyssalSlime.id("textures/gui/hanging_signs/oozewood");
 
 
-    public static final TerraformSignBlock OOZEWOOD_SIGN = registerBlock("oozewood_sign",
+    public static final TerraformSignBlock OOZEWOOD_SIGN = registerBlockNoItem("oozewood_sign",
             new TerraformSignBlock(OOZEWOOD_SIGN_TEXTURE,
                     AbstractBlock.Settings.create()
                             .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
@@ -195,7 +190,7 @@ public class ModBlocks {
                             .strength(1.0F)
                             .burnable()));
 
-    public static final TerraformWallSignBlock OOZEWOOD_WALL_SIGN = registerBlock("oozewood_wall_sign",
+    public static final TerraformWallSignBlock OOZEWOOD_WALL_SIGN = registerBlockNoItem("oozewood_wall_sign",
             new TerraformWallSignBlock(OOZEWOOD_SIGN_TEXTURE,
                     AbstractBlock.Settings.create()
                             .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
@@ -205,7 +200,7 @@ public class ModBlocks {
                             .strength(1.0F)
                             .burnable()));
 
-    public static final TerraformHangingSignBlock OOZEWOOD_HANGING_SIGN = registerBlock("oozewood_hanging_sign",
+    public static final TerraformHangingSignBlock OOZEWOOD_HANGING_SIGN = registerBlockNoItem("oozewood_hanging_sign",
             new TerraformHangingSignBlock(OOZEWOOD_HANGING_SIGN_TEXTURE, OOZEWOOD_HANGING_SIGN_GUI_TEXTURE,
                     AbstractBlock.Settings.create()
                             .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
@@ -215,7 +210,7 @@ public class ModBlocks {
                             .strength(1.0F)
                             .burnable()));
 
-    public static final TerraformWallHangingSignBlock OOZEWOOD_WALL_HANGING_SIGN = registerBlock("oozewood_hanging_sign",
+    public static final TerraformWallHangingSignBlock OOZEWOOD_WALL_HANGING_SIGN = registerBlockNoItem("oozewood_hanging_sign",
             new TerraformWallHangingSignBlock(OOZEWOOD_HANGING_SIGN_TEXTURE, OOZEWOOD_HANGING_SIGN_GUI_TEXTURE,
                     AbstractBlock.Settings.create()
                             .mapColor(OOZEWOOD_PLANKS.getDefaultMapColor())
@@ -246,6 +241,10 @@ public class ModBlocks {
 
     private static <T extends Block> T registerBlock(String name, T block){
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, Identifier.of(AbyssalSlime.MOD_ID, name),block);
+    }
+
+    private static <T extends Block> T registerBlockNoItem(String name, T block){
         return Registry.register(Registries.BLOCK, Identifier.of(AbyssalSlime.MOD_ID, name),block);
     }
 
